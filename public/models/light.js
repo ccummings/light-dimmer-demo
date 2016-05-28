@@ -10,7 +10,16 @@ export const Light = can.Map.extend({
 			type: 'string'
 		},
     power: {
-			type: 'number'
+			type: 'number',
+      set(newVal) {
+        if(newVal > 100) {
+          newVal = 100;
+        }
+        if(newVal < 0) {
+          newVal = 0;
+        }
+        return newVal;
+      }
 		}
   }
 });
