@@ -1,0 +1,11 @@
+<div class="col-sm-1">
+  <div class="btn-group-vertical" role="group">
+    <button ($click)="increment()" type="button" class="btn btn-default"><i class="glyphicon glyphicon-arrow-up"></i></button>
+    <button ($click)="decrement()" type="button" class="btn btn-default"><i class="glyphicon glyphicon-arrow-down"></i></button>
+  </div>
+</div>
+<div class="col-sm-4">
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" style="width: {{light.power}}%;">{{light.power}}%</div>
+  </div>
+</div>

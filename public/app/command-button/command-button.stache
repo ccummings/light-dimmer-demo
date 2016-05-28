@@ -1,0 +1,7 @@
+<button class="btn btn-default" {{#disabled}}disabled{{/disabled}} ($click)="sendCommand()">
+  {{#if command}}
+    {{mstoSeconds command.timeLeft}} seconds left
+  {{else}}
+    {{name}}
+  {{/if}}
+</button>

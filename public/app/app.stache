@@ -1,0 +1,15 @@
+<can-import from="public/styles/app.less!"/>
+<can-import from="public/app/light-dimmer/"/>
+<can-import from="public/app/command-button/"/>
+
+<div class="container">
+  <h1>Light Dimmer Demo</h1>
+  <h2>{{light.name}}</h2>
+  <div class="row">
+    <command-button {change}="50" {inverse}="true" {light}="light">-50 over 3 seconds</command-button>
+    <command-button {change}="50" {light}="light">+50 over 3 seconds</command-button>
+  </div>
+  <div class="row">
+    <light-dimmer {light}="light"></light-dimmer>
+  </div>
+</div>

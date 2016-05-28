@@ -1,0 +1,23 @@
+{
+  "name": "Light Dimmer Demo",
+  "description": "Quick demo showing how a real-time light dimmer could be built with CanJS",
+  "keywords": ["canjs"],
+  "repository": "https://github.com/ccummings/light-dimmer-demo",
+  "success_url": "/",
+  "env": {
+    "GITHUB_CLIENT_ID": {
+      "description": "Your github client id",
+      "required": true
+    },
+    "GITHUB_CLIENT_SECRET": {
+      "description": "Your Github client secret",
+      "required": true
+    },
+    "HOST": {
+      "description": "The url for your app",
+      "required": false
+    }
+  },
+  "image": "heroku/nodejs",
+  "addons": []
+}

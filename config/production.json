@@ -1,0 +1,5 @@
+{
+  "host": "feathers-chat-app.feathersjs.com",
+  "port": 3030,
+  "public": "../public/"
+}
