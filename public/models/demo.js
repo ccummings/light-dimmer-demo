@@ -7,7 +7,7 @@ export const Demo = can.Map.extend({
   define: {
     timeLeft: {
       type: 'number',
-      value: -1,
+      value: 0,
       serialize: false
     }
   }
@@ -27,6 +27,4 @@ export const demoConnection = superMap({
 feathers.io.on('demo created', demo => demoConnection.createInstance(demo));
 feathers.io.on('demo updated', demo => demoConnection.updateInstance(demo));
 feathers.io.on('demo patched', demo => demoConnection.updateInstance(demo));
-feathers.io.on('demo removed', function(demo) {
-  demoConnection.destroyInstance(demo)
-});
+feathers.io.on('demo removed', demo => demoConnection.destroyInstance(demo));

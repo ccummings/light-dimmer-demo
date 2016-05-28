@@ -1,14 +1,13 @@
 import Map from 'can/map/';
 import superMap from 'public/connections/super-map';
-import tag from 'can-connect/can/tag/';
 import feathers from './feathers';
 import 'can/map/define/';
 
 export const Light = can.Map.extend({
   define: {
-		name: {
-			type: 'string'
-		},
+    name: {
+      type: 'string'
+    },
     power: {
 			type: 'number',
       set(newVal) {
@@ -35,14 +34,7 @@ export const lightConnection = superMap({
 	name: 'lights'
 });
 
-
-tag("light-model", lightConnection);
-
 feathers.io.on('lights created', light => lightConnection.createInstance(light));
 feathers.io.on('lights updated', light => lightConnection.updateInstance(light));
-feathers.io.on('lights patched', function(light) {
-  lightConnection.updateInstance(light)
-});
-feathers.io.on('lights removed', function(light) {
-  lightConnection.destroyInstance(light);
-});
+feathers.io.on('lights patched', light => lightConnection.updateInstance(light));
+feathers.io.on('lights removed', light => lightConnection.destroyInstance(light));
